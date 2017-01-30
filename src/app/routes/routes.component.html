@@ -1,0 +1,9 @@
+<ul>
+
+  <li *ngFor="let name of apinVastaus">
+    <!--<a ng-href="https://maps.google.fi/maps/place/{{name.lat}}+{{name.lon}}"><p>{{name.name}}</p>-->
+      <a href="https://maps.google.fi/maps/place/{{name.lat}}+{{name.lon}}"><p>{{name.name}}</p>
+      <p>{{name.route.longName}}</p></a>
+  </li>
+</ul>
+
