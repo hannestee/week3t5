@@ -1,9 +1,24 @@
-<ul>
 
+<!--
+<ul>
   <li *ngFor="let name of apinVastaus">
-    <!--<a ng-href="https://maps.google.fi/maps/place/{{name.lat}}+{{name.lon}}"><p>{{name.name}}</p>-->
-      <a href="https://maps.google.fi/maps/place/{{name.lat}}+{{name.lon}}"><p>{{name.name}}</p>
+    <!--<a ng-href="https://maps.google.fi/maps/place/{{name.lat}}+{{name.lon}}"><p>{{name.name}}</p>
+    <a href="https://maps.google.fi/maps/place/{{name.lat}}+{{name.lon}}"><p>{{name.name}}</p>
       <p>{{name.route.longName}}</p></a>
+  </li>
+</ul>
+-->
+
+
+<ul>
+  <li *ngFor="let asema of asemaVastaus">
+    <a href="https://maps.google.fi/maps/place/{{asema.lat}}+{{asema.lon}}">{{asema.name}}</a>
+      <ul>
+      <li *ngFor="let reitti of reittiVastaus">
+      <p>{{reitti.name}}</p>
+      <p>{{reitti.route.longName}}</p>
+      </li>
+      </ul>
   </li>
 </ul>
 

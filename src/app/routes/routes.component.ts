@@ -8,7 +8,8 @@ import {DigitransitService} from "../services/digitransit.service";
 })
 export class RoutesComponent implements OnInit {
 
-  private apinVastaus: any = [];
+  private asemaVastaus: any = [];
+  private reittiVastaus: any = [];
 
   constructor(private digitransitService: DigitransitService) { }
 
@@ -16,10 +17,13 @@ export class RoutesComponent implements OnInit {
     this.digitransitService.getRoutes()
       .subscribe(
         (res) => {
-          this.apinVastaus = res.data.stops[0].patterns;
-          console.log(res.data.stops[0].patterns[5].name);
-          console.log(res.data.stops[0].patterns[5].route.longName);
-          console.log(res.data.stops[0]);
+          this.asemaVastaus = res.data.stops;
+          this.reittiVastaus = res.data.stops[0].patterns;
+
+          //console.log(res.data.stops[0].patterns[5].name);
+          //console.log(res.data.stops[0].patterns[5].route.longName);
+          console.log(res.data.stops[0].name);
+          console.log(this.asemaVastaus[0].lat);
         }
       );
   }
